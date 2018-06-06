@@ -10,7 +10,7 @@ var arrayTasks = {
 	},
 
 	square: function (arr) {
-		res = [];
+		var res = [];
 		arr.forEach(function(num) {
 			res.push(num**2);
 		});
@@ -24,9 +24,17 @@ var arrayTasks = {
 		return sum;
 	},
 
-	// findDuplicates: function (arr) {
-
-	// },
+	findDuplicates: function (arr) {
+		var res = [];
+		arr.forEach(function(num, index) {
+			if (arr.indexOf(num, index + 1) > -1) {
+				if (res.indexOf(num) === -1) {
+					res.push(num);
+				}
+			}
+		});
+		return res;
+	},
 
 	// removeAndClone: function (arr, valueToRemove) {
 
